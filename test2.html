@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>TEST 2</title></head>
+<body style="background:#060810;color:#e2e8f0;font-family:Arial;padding:40px;">
+  <h1 style="color:#38bdf8;">✅ El HTML carga correctamente</h1>
+  <p id="js">❌ JavaScript NO funciona</p>
+  <p id="ls">❌ localStorage NO funciona</p>
+  <script>
+    document.getElementById('js').style.color = '#22c55e';
+    document.getElementById('js').textContent = '✅ JavaScript funciona';
+    try {
+      localStorage.setItem('test', '1');
+      localStorage.removeItem('test');
+      document.getElementById('ls').style.color = '#22c55e';
+      document.getElementById('ls').textContent = '✅ localStorage funciona';
+    } catch(e) {
+      document.getElementById('ls').style.color = '#f43f5e';
+      document.getElementById('ls').textContent = '❌ localStorage BLOQUEADO: ' + e.message;
+    }
+  </script>
+</body>
+</html>
